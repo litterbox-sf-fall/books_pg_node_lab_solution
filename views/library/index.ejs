@@ -11,7 +11,7 @@
   <h1>All my books!</h1>
   <a href="/books/new">Add a new Book</a>
   <% allBooks.forEach(function(book){ %>
-  <p><%= book.title %> by <%= book.author %></p>
+  <p><a href="/books/<%= book.id %>"><%= book.title %></a> by <%= book.author %></p>
   <form action="/books/<%= book.id %>?_method=delete" method="post">
   	<input type="submit" value="Delete">
   </form>

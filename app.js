@@ -41,7 +41,10 @@ app.post('/books', function(req, res) {
 
 //Show
 app.get('/books/:id', function(req, res) {
-  res.send("impliment show book. showing book " + req.params.id);
+  var id = req.params.id;
+  library.findById(id,function(leBook){
+      res.render('library/show', {book: leBook});
+  });
 });
 
 //Edit
